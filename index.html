@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Maria Huchkova</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <img src="assets/svg/burger.svg" alt="burger" class="burger">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#info">about me</a></li>
+                    <li><a href="#skills-section">skills</a></li>
+                    <li><a href="#code-section">code example</a></li>
+                    <li><a href="#projects-section">projects</a></li>
+                    <li><a href="#education-section">education</a></li>
+                    <li><a href="#contacts">contacts</a></li>
+                </ul>
+                <p class="cv"><span>{</span>CV<span>}</span></p>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="title">Hi, I'm <span>Maria Huchkova; </span>I'm beginner front-end;</h1>
+                <p class="intro">{ My goal is to become a professional in my field }</p>
+                <img class="photo" src="assets/image/photo.jpg" alt="photo">
+                <img class="vector-1" src="assets/svg/vector-1.svg" alt="vector">
+                <img class="vector-2" src="assets/svg/vector-2.svg" alt="vector">
+                <img class="abstract-1" src="assets/svg/abstract-1.svg" alt="abstract">
+                <img class="abstract-2" src="assets/svg/abstract-2.svg" alt="abstract">
+            </section>
+
+            <section class="info" id="info">
+                <img class="vector-3" src="assets/svg/vector-3.svg" alt="vector">
+                <img class="abstract-3" src="assets/image/image-4.jpg" alt="image">
+                <h2><span>{</span>About me<span>}</span></h2>
+                <div class="info-container">
+                    <p class="p1">I chose to be a programmer because I would like to constantly develop, comprehend new
+                        technologies.</p>
+                    <p class="p2">It is important for me to cooperate and exchange experience with other countries, to
+                        be in a friendly and
+                        intelligent team.</p>
+                    <p class="p3">In turn, I am hardworking and responsible. I try to complete my task as efficiently as
+                        possible and
+                        treat my colleagues in a friendly and respectful manner, observing subordination.</p>
+                </div>
+                <p class="p4">I love what I do</p>
+            </section>
+
+            <section class="skills-section" id="skills-section">
+                <h2><span>{</span>Skills<span>}</span></h2>
+                <img src="assets/image/modern.jpg" alt="image">
+                <p class="text-2">I work with passion.</p>
+                <div class="skills">
+                    <ul>
+                        <li><span>[</span>HTML<span>]</span></li>
+                        <li><span>[</span>CSS<span>]</span></li>
+                        <li><span>[</span>JavaScript<span>]</span></li>
+                        <li><span>[</span>Git<span>]</span></li>
+                        <li><span>[</span>GitHub<span>]</span></li>
+                        <li><span>[</span>Markdown<span>]</span></li>
+                        <li><span>[</span>VS Code<span>]</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="code-section" id="code-section">
+                <h2><span>{</span>Code example<span>}</span></h2>
+                <p class="task-1 task">Given an array of integers, find the one that appears an odd number of times.
+                    There will always be only one integer that appears an odd number of times.</p>
+                <p class="example-1 example">[1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time
+                    (which is odd).</p>
+                <pre class="code-1 code">
+                    <code class="js">
+function findOdd(numbers) {
+    const counters = new Map();
+    for (const number of numbers) {
+        if (counters.has(number)) {
+            let counter = counters.get(number);
+            counter++;
+            counters.set(number, counter);
+        } else {
+            counters.set(number, 1);
+        }
+    }
+    for (const number of counters.keys()) {
+        let counter = counters.get(number);
+        if (counter % 2 === 1) {
+            return number;
+        }
+    }
+}               
+                    </code>
+                </pre>
+                <p class="task-2 task">Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and
+                    returns the same string with all even indexed characters in each word upper cased, and all odd
+                    indexed characters in each word lower cased. The zero-ith index is even and you need to start over
+                    for each word.</p>
+                <p class="example-2 example">toWeirdCase( "Weird string case" ); // => returns "WeIrD StRiNg CaSe"</p>
+                <pre class="code-2 code">
+                    <code class="js">
+function toWeirdCase(string){
+    let words = [];
+    let newStr = "";
+    words = string.split(" ");
+    for (let word of words) {
+        for (let i = 0; i < word.length; i++) {
+            if (i % 2 === 0) {
+                newStr += word[i].toString().toUpperCase();
+            } else {
+                newStr += word[i].toString();
+            }
+            if (i === word.length - 1) {
+                newStr += " ";
+            }
+        }
+    }
+    return newStr.trim();
+}                        
+                    </code>
+                </pre>
+                <p class="task-3 task">Given a lottery ticket (ticket), represented by an array of 2-value arrays, you
+                    must find out if you've won the jackpot. To do this, you must first count the 'mini-wins' on your
+                    ticket. Each subarray has both a string and a number within it. If the character code of any of the
+                    characters in the string matches the number, you get a mini win. Note you can only have one mini win
+                    per sub array.</p>
+                <p class="example-3 example">bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1); // => 'Winner!'</p>
+                <pre class="code-3 code">
+                    <code class="js">
+function bingo(ticket, win) {
+    let countWin = 0;
+    for (let i = 0; i < ticket.length; i++) {
+        let str = "";
+        str = ticket[i][0];
+        for (let j = 0; j < str.length; j++) {
+            if (str.charCodeAt(j) == ticket[i][1]) {
+                countWin += 1;
+                break;
+            }
+        }
+    }
+    if (countWin >= win) {
+        return "Winner!";
+    } else {
+        return "Loser!";
+    }
+}
+                    </code>
+                </pre>
+                <div class="prev" onclick="showCode(-1)"><=</div>
+                <div class="next" onclick="showCode(1)">=></div>
+                <div class="dots">
+                    <span class="dot" onclick="currentCode(1)"></span>
+                    <span class="dot" onclick="currentCode(2)"></span>
+                    <span class="dot" onclick="currentCode(3)"></span>
+                </div>
+                <img class="vector-4" src="assets/svg/vector-4.svg" alt="vector">
+                <img class="abstract-4" src="assets/svg/abstract-4.svg" alt="abstract">
+            </section>
+
+            <section class="projects-section" id="projects-section">
+                <h2><span>{</span>My projects<span>}</span></h2>
+                <p class="text">...and the most important part</p>
+                <div class="projects">
+                    <div class="project-container">
+                        <h3><span>[</span>Portfolio<span>]</span></h3>
+                        <p>- photographer's portfolio landing page.</p>
+                        <div class="discription bg-1">
+                            <div class="spans">
+                                <span>Valid semantic adaptive layout.</span>
+                                <span>Easy to maintain readable code.</span>
+                                <span>Export styles and graphics from Figma.</span>
+                                <span>Using JavaScript to implement changing images, translating the page into two languages, the ability to switch light and dark themes.</span>
+                                <span>Custom video player.</span>
+                            </div>
+                        </div>
+                        <a href="https://rolling-scopes-school.github.io/sleepymaryalex-JSFEPRESCHOOL/portfolio/" target="_blank"><button class="btn"><span>see project</span></button></a>
+                    </div>
+                    <div class="project-container">
+                        <h3><span>[</span>Movie App<span>]</span></h3>
+                        <p>- an application that displays information about movies at the request of the user.</p>
+                        <div class="discription bg-2">
+                            <div class="spans">
+                                <span>The page has several movie cards and a search bar. Each movie card has a poster and the name of the movie.</span>
+                                <span>When the application loads, the page displays movie cards with data received from the API.</span>
+                                <span>If you enter a word in the search field and submit a search query, the page will display cards for movies that have that word in their titles.</span>
+                            </div>
+                        </div>
+                        <a href="https://rolling-scopes-school.github.io/sleepymaryalex-JSFEPRESCHOOL/movie-app/" target="_blank"><button class="btn"><span>see project</span></button></a>
+                    </div>
+                    <div class="project-container">
+                        <h3><span>[</span>Memory Game<span>]</span></h3>
+                        <p>- a game with a set of pairs of identical cards that are displayed face down.</p>
+                        <div class="discription bg-3">
+                            <div class="spans">
+                                <span>Implementation of the game logic. The cards clicked by the player are turned over according to the rules of the game.</span>
+                                <span>The game ends when all cards are revealed.</span>
+                                <span>At the end of the game, its result is displayed - the number of moves that were needed to complete the game.</span>
+                                <span>The results of the last 10 games are stored in local storage. There is a table of records, which saves the results of the previous 10 games.</span>
+                            </div>
+                        </div>
+                        <a href="https://rolling-scopes-school.github.io/sleepymaryalex-JSFEPRESCHOOL/memory-game/" target="_blank"><button class="btn"><span>see project</span></button></a>
+                    </div>
+                </div>
+                <img class="abstract-5" src="assets/svg/abstract-4.svg" alt="abstract">
+                <img class="abstract-6" src="assets/svg/abstract-5.svg" alt="abstract">
+            </section>
+
+            <section class="education-section" id="education-section">
+                <h2><span>{</span>Education<span>}</span></h2>
+                <div class="education">
+                    <ul>
+                        <li><span class="bracket">[</span>RS Schools Course <span class="purple">"JavaScript/Front-end. Stage 0"</span><span class="yellow"> (completed)</span><span class="bracket">]</span>;</li>
+                        <li><span class="bracket">[</span>RS Schools Course <span class="purple">"JavaScript/Front-end. Stage 1"</span><span class="yellow"> (completed)</span><span class="bracket">]</span>;</li>
+                        <li><span class="bracket">[</span>RS Schools Course <span class="purple">"JavaScript/Front-end. Stage 2"</span><span class="yellow"> (in process)</span><span class="bracket">]</span>;</li>
+                        <li><span class="bracket">[</span>Lessons with a native English speaker on the international online educational platform <span class="purple">"Preply"</span><span class="yellow"> (in process)</span><span class="bracket">]</span>;</li>
+                        <li><span class="bracket">[</span>Lessons at <span class="purple">"OnTime"</span> English School <span class="yellow">(in process)</span><span class="bracket">]</span>;</li>
+                    </ul>
+                </div>
+                <img class="abstract-7" src="assets/svg/abstract-7.svg" alt="abstract">
+                <img class="vector-7" src="assets/svg/vector-7.svg" alt="vector">
+            </section>
+
+            <section class="hobbies-section">
+                <h2><span>{</span>Hobbies<span>}</span></h2>
+                <div class="hobbies">
+                    <ul>
+                        <li><span>[</span>Science<span>]</span></li>
+                        <li><span>[</span>Running<span>]</span></li>
+                        <li><span>[</span>Cycling<span>]</span></li>
+                        <li><span>[</span>Books<span>]</span></li>
+                        <li><span>[</span>Travels<span>]</span></li>
+                    </ul>
+                </div>
+                <p>console.log("I'm with Ukraine");</p>
+                <img src="assets/svg/vector-4.svg" alt="vector">
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p class="contact-title">// contact me</p>
+            <div class="contacts" id="contacts">
+                <ul>
+                    <li><strong>location:</strong>Belarus / Minsk;</li>
+                    <li><strong>discord:</strong>Mary Huchkova#6811;</li>
+                    <li><strong>email:</strong>mariaguchkova1@gmail.com;</li>
+                    <li><strong>phone:</strong>+375 33 337-75-04;</li>
+                </ul>
+            </div>
+            <a class="rs-link" href="https://rs.school/js/" target="_blank"><img class="rs-img" src="assets/svg/rs-school.svg"
+                    alt="logo"></a>
+            <div class="links">
+                <p>&#169; 2022 by Maria Huchkova</p>
+                <a class="github-link" href="https://github.com/sleepyMaryAlex" target="_blank"><img class="github-img"
+                        src="assets/svg/github.svg" alt="logo"></a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
