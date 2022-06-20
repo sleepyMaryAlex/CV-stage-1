@@ -1107,6 +1107,12 @@ h2 {
 }
 
 @media (max-width: 515px) {
+    .p1,
+    .p2,
+    .p3 {
+        text-align: center;
+    }
+    
     .code {
         font-size: 12px;
     }
