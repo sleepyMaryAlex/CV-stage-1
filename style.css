@@ -142,7 +142,7 @@ h2 {
 }
 
 .title {
-    width: 300px;
+    width: 320px;
     line-height: 35px;
     position: relative;
     top: 30%;
@@ -658,7 +658,7 @@ h2 {
 .education-section {
     background-color: var(--pale-purple);
     position: relative;
-    height: 550px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -723,7 +723,7 @@ h2 {
     color: var(--pale-purple);
     text-align: center;
     margin: 80px;
-    margin-left: 150px;
+    margin-left: 100px;
     transform: rotate(350deg);
 }
 
@@ -1098,7 +1098,7 @@ h2 {
 
 @media (max-width: 615px) {
     .education-section {
-        height: 650px;
+        height: 550px;
     }
 
     .text-2 {
@@ -1195,6 +1195,6 @@ h2 {
     }
 
     .education-section {
-        height: 750px;
+        height: 650px;
     }
 }
